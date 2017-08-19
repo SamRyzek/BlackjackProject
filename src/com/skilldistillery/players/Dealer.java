@@ -4,7 +4,6 @@ import com.skilldistillery.cards.Deck;
 
 public class Dealer extends Player {
 
-	private Hand hand;
 	private Deck deck;
 	
 	public Dealer() {
@@ -15,14 +14,6 @@ public class Dealer extends Player {
 		
 	}
 	
-	
-	public Hand getHand() {
-		return hand;
-	}
-
-	public void setHand(Hand hand) {
-		this.hand = hand;
-	}
 
 	public Deck getDeck() {
 		return deck;

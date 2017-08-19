@@ -2,7 +2,6 @@ package com.skilldistillery.players;
 
 public class Gambler extends Player {
 
-	private Hand hand;
 
 	
 	public Gambler() {
@@ -18,12 +17,4 @@ public class Gambler extends Player {
 	}
 	
 	
-	public Hand getHand() {
-
-		return hand;
-	}
-
-	public void setHand(Hand hand) {
-		this.hand = hand;
-	}
 }
