@@ -124,14 +124,14 @@ public class Game {
 
 	public void printHand(Player player) {
 
-		if (player instanceof Gambler) {
+		if (player instanceof Gambler) { //prints gambler's hand
 			System.out.println("Gambler's Hand: ");
 			System.out.println("-------------");
 			for (Cards dg : gambler.getHand().getCards()) {
 				System.out.println(dg);
 			}
 		}
-		if (player instanceof Dealer) {
+		if (player instanceof Dealer) { //prints dealer's hand
 			System.out.println("Dealer's Hand: ");
 			System.out.println("--------------");
 			for (Cards cg : dealer.getHand().getCards()) {
@@ -145,15 +145,15 @@ public class Game {
 
 	public int calculateHand(Player player) {
 		int sum = 0;
-		for (Cards card : player.getHand().getCards()) {
+		for (Cards card : player.getHand().getCards()) { //calculates standard hand no aces
 			sum = card.getRank().getValueHigh() + sum;
 		}
-		for (Cards card : dealer.getHand().getCards()) {
+		for (Cards card : dealer.getHand().getCards()) { //calculates dealer hand with ace and subtracts 10 if needed
 			if (card.getRank().equals(Rank.ACE) && sum > 21) {
 				sum = sum - 10;
 			}
 		}
-		for (Cards card : gambler.getHand().getCards()) {
+		for (Cards card : gambler.getHand().getCards()) { //calculates gambler hand with ace and subtracts 10 if needed
 			if (card.getRank().equals(Rank.ACE) && sum > 21) {
 				sum = sum - 10;
 			}
@@ -162,7 +162,7 @@ public class Game {
 		return sum;
 	}
 
-	public void checkForWin(Player player, Player dealer) {
+	public void checkForWin(Player player, Player dealer) { //winning condition check
 		System.out.println("Player: " + calculateHand(player));
 		System.out.println("Dealer: " + calculateHand(dealer));
 		if (calculateHand(player) > 21) {
@@ -178,7 +178,7 @@ public class Game {
 		}
 	}
 
-	public void initialCheck(Player player, Player dealer) {
+	public void initialCheck(Player player, Player dealer) {  //initial check for blackjack condition
 		if (calculateHand(gambler) == 21 && calculateHand(dealer) < 21) {
 			System.out.println("Blackjack Gambler wins");
 		} else if (calculateHand(dealer) == 21 && calculateHand(player) < 21) {
