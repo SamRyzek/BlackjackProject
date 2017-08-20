@@ -5,7 +5,16 @@ public class Gambler extends Player {
 
 	
 	public Gambler() {
-		// TODO Auto-generated constructor stub
+	
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Gambler [hand=");
+		builder.append(hand);
+		builder.append("]");
+		return builder.toString();
 	}
 
 	public void makesWager(){

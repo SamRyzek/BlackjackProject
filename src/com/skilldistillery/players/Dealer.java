@@ -7,7 +7,7 @@ public class Dealer extends Player {
 	private Deck deck;
 	
 	public Dealer() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	public void paysGambler(){
@@ -21,6 +21,15 @@ public class Dealer extends Player {
 
 	public void setDeck(Deck deck) {
 		this.deck = deck;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Dealer [deck=");
+		builder.append(deck);
+		builder.append("]");
+		return builder.toString();
 	}
 	
 	
