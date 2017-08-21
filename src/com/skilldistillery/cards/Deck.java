@@ -23,7 +23,7 @@ public class Deck {
       
     }
 	
-	public void addCard(Cards c) {
+	public void addCard(Cards c) { //creates deck in the form of an arrayList
 		if(cards == null) {
 			cards = new ArrayList<Cards>();
 			cards.add(c);
@@ -35,7 +35,7 @@ public class Deck {
 		
 	
 	
-	public Cards deliverCardsForGame() {
+	public Cards deliverCardsForGame() { //remove the dealt card from the deck of cards
 		
 		return cards.remove(0);
 	

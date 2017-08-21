@@ -77,7 +77,7 @@ public class Game {
 
 					printHand(gambler);
 				} else if (playerR.equals("H")) {
-					checkForWin(gambler, dealer);
+					//checkForWin(gambler, dealer);
 					System.out.println("Gambler has selected to hold!");
 					break;
 				} else {
@@ -165,24 +165,25 @@ public class Game {
 	public void checkForWin(Player player, Player dealer) { //winning condition check
 		System.out.println("Player: " + calculateHand(player));
 		System.out.println("Dealer: " + calculateHand(dealer));
+		System.out.println();
 		if (calculateHand(player) > 21) {
 			System.out.println("Player Busts! Dealer wins!");
 		} else if (calculateHand(dealer) > 21) {
 			System.out.println("Dealer Busted! Player won!");
 		} else if (((calculateHand(player) > calculateHand(dealer)))) {
-			System.out.println("Gambler won");
+			System.out.println("Gambler won!!!");
 		} else if (calculateHand(player) == calculateHand(dealer)) {
-			System.out.println("Game is a push");
+			System.out.println("Game is a push!");
 		} else if (((calculateHand(player) < calculateHand(dealer)))) {
-			System.out.println("Dealer won");
+			System.out.println("Dealer won!!");
 		}
 	}
 
 	public void initialCheck(Player player, Player dealer) {  //initial check for blackjack condition
 		if (calculateHand(gambler) == 21 && calculateHand(dealer) < 21) {
-			System.out.println("Blackjack Gambler wins");
+			System.out.println("Blackjack Gambler wins!!");
 		} else if (calculateHand(dealer) == 21 && calculateHand(player) < 21) {
-			System.out.println("Blackjack Dealer wins");
+			System.out.println("Blackjack Dealer wins!!");
 		} else if (calculateHand(dealer) == 21 && calculateHand(player) == 21) {
 
 			System.out.println("Blackjack Dealer and Player push!");
